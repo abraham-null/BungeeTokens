@@ -1,0 +1,8 @@
+name: BungeeTokens
+version: 1.0
+description: BungeeTokens
+author: abraham-null
+authors: [abraham-null] 
+website: http://ackeron.com
+main: BungeeTokens.BungeeTokens.BungeeTokens
+depend: [MySQLAPI]
