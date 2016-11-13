@@ -6,3 +6,7 @@ authors: [abraham-null]
 website: http://ackeron.com
 main: BungeeTokens.BungeeTokens.BungeeTokens
 depend: [MySQLAPI]
+commands:
+  tokens:
+    description: tokens
+    aliases: [token, tok, toks]

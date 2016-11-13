@@ -17,7 +17,7 @@ public class ProPvper extends Prefixes{
 		
 		this.title = ChatColor.YELLOW.toString() + "[" + ChatColor.DARK_RED.toString() + ChatColor.BOLD.toString() + "Pro"
 				+ ChatColor.RED.toString() + ChatColor.BOLD.toString() + "Pvper" + ChatColor.YELLOW.toString() + "] " + ChatColor.GOLD;
-
+		this.displayTitle =  this.title;
 
 		
 		

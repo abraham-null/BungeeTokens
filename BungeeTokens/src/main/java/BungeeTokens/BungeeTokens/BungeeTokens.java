@@ -13,10 +13,12 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import API.TokenAPI;
+import Listeners.CommandListener;
 import Listeners.PlayerListener;
 import Managers.TokenSQLManager;
 import Menus.MainMenu;
 import Prefixes.BlameGoldie;
+import Prefixes.Nothing;
 import Prefixes.Prefixes;
 import Prefixes.PrefixesMenu;
 import Prefixes.ProBuilder;
@@ -39,6 +41,7 @@ public class BungeeTokens extends JavaPlugin{
 	
 	@Override
 	public void onDisable() {
+		tokenAPI.saveAllPlayersTokens();
 	}
 
 	@Override
@@ -47,7 +50,7 @@ public class BungeeTokens extends JavaPlugin{
 		
 		//Register Listeners
 		Bukkit.getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
-		
+		this.getCommand("tokens").setExecutor(new CommandListener(this));
 
 		tokenSQLManager = new TokenSQLManager(this);
 		mainMenu = new MainMenu(this);
@@ -60,6 +63,7 @@ public class BungeeTokens extends JavaPlugin{
 		prefixesArray.add(new ProPvper());
 		prefixesArray.add(new ProBuilder());
 		prefixesArray.add(new BlameGoldie());
+		//prefixesArray.add(new Nothing());
 		
 	}
 

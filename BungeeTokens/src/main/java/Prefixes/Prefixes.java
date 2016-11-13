@@ -9,7 +9,16 @@ public class Prefixes {
 	public int cost;
 	public String perm;
 	public String title;
+	public String displayTitle;
 	
+	public String getDisplayTitle() {
+		return displayTitle;
+	}
+
+	public void setDisplayTitle(String displayTitle) {
+		this.displayTitle = displayTitle;
+	}
+
 	public String getTitle() {
 		return title;
 	}

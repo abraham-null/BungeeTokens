@@ -14,6 +14,7 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import API.TokenAPI;
 import BungeeTokens.BungeeTokens.BungeeTokens;
 
 public class PrefixesMenu implements Listener {
@@ -35,10 +36,47 @@ public class PrefixesMenu implements Listener {
 		if (e.getClickedInventory().equals(inv)) {
 			String clickedTitle = e.getCurrentItem().getItemMeta().getDisplayName();
 			
+			if(e.getCurrentItem().getType().equals(Material.GLASS_BOTTLE)){
+				Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),
+						"permissions player " + p.getName() + " prefix " + ""+ChatColor.GOLD);
+				p.sendMessage(ChatColor.GREEN.toString()+"Your title has been removed");
+				p.closeInventory();
+			}
+			
 			for (int i = 0; i < plugin.prefixesArray.size(); i++) {
 				Prefixes pre = plugin.prefixesArray.get(i);
-				if(pre.getTitle().equals(clickedTitle)){
-					Bukkit.getLogger().info(pre.getPerm());
+				if(pre.getDisplayTitle().equals(clickedTitle)){
+					
+					String title = pre.getTitle();
+					String perm = pre.getPerm();
+					int cost = pre.getCost();
+					int playerTokens = plugin.tokenAPI.playerTokensFromHashMap(p);
+					
+					if(p.hasPermission(perm)){
+						Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),
+								"permissions player " + p.getName() + " prefix " + title);
+						p.sendMessage(ChatColor.GREEN.toString()+"Your title has been set to: "+title);
+						p.closeInventory();
+						showPrefixMenu(p);
+					} else {
+						if(playerTokens >= cost){
+							plugin.tokenAPI.removePlayerTokensFromHashMap(p, cost);
+							Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),
+									"permissions player " + p.getName() + " set " + perm);
+							p.sendMessage(ChatColor.GREEN.toString()+"Title purchased!");
+							Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),
+									"permissions player " + p.getName() + " prefix " + title);
+							p.closeInventory();
+							showPrefixMenu(p);
+						} else {
+							p.sendMessage(ChatColor.GREEN.toString()+"Not enough tokens!");
+						}
+						}
+						
+						
+					}
+					
+					
 				}
 				
 			}
@@ -46,7 +84,7 @@ public class PrefixesMenu implements Listener {
 			
 		}
 		
-	}
+	
 		
 		
 	public Inventory showPrefixMenu(Player p){
@@ -77,6 +115,14 @@ public class PrefixesMenu implements Listener {
 			loreArray.clear();
 			
 		}
+		
+		//set empty bottle
+		loreArray.add("");
+		loreArray.add("Remove all current titles");
+		loreArray.add("being displayed. ");
+		loreArray.add("");
+		inv.setItem(4, createItem(Material.GLASS_BOTTLE, "Clear all titles", loreArray));
+		loreArray.clear();
 		
 		return inv;
 	}

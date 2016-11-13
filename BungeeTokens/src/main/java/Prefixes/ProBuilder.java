@@ -17,7 +17,7 @@ public class ProBuilder extends Prefixes{
 		
 		this.title = ChatColor.YELLOW.toString() + "[" + ChatColor.DARK_RED.toString() + ChatColor.BOLD.toString() + "Pro"
 				+ ChatColor.RED.toString() + ChatColor.BOLD.toString() + "Builder" + ChatColor.YELLOW.toString() + "] " + ChatColor.GOLD;
-
+		this.displayTitle =  this.title;
 
 		
 		
