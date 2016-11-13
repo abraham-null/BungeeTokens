@@ -53,6 +53,7 @@ public class BungeeTokens extends JavaPlugin{
 		Bukkit.getServer().getPluginManager().registerEvents(mainMenu, this);
 		tokenAPI = new TokenAPI(this);
 		prefixesMenu = new PrefixesMenu(this);
+		Bukkit.getServer().getPluginManager().registerEvents(prefixesMenu, this);
 		
 		
 		prefixesArray.add(new ProPvper());
