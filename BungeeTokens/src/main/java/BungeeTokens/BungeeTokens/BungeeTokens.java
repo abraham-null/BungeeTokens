@@ -6,10 +6,6 @@ import java.util.List;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import API.TokenAPI;
@@ -18,7 +14,6 @@ import Listeners.PlayerListener;
 import Managers.TokenSQLManager;
 import Menus.MainMenu;
 import Prefixes.BlameGoldie;
-import Prefixes.Nothing;
 import Prefixes.Prefixes;
 import Prefixes.PrefixesMenu;
 import Prefixes.ProBuilder;
