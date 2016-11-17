@@ -11,11 +11,11 @@ import org.bukkit.event.player.PlayerQuitEvent;
 
 import BungeeTokens.BungeeTokens.BungeeTokens;
 
-public class PlayerListener implements Listener{
+public class PlayerListena implements Listener{
 	
-    private BungeeTokens plugin;
+    public final BungeeTokens plugin;
 
-    public PlayerListener(BungeeTokens plugin) {
+    public PlayerListena(BungeeTokens plugin) {
         this.plugin = plugin;
     }
 	

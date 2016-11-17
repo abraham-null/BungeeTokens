@@ -1,5 +1,6 @@
 package BungeeTokens.BungeeTokens;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import API.TokenAPI;
 import Listeners.CommandListener;
-import Listeners.PlayerListener;
+import Listeners.PlayerListena;
 import Managers.TokenSQLManager;
 import Menus.MainMenu;
 import Prefixes.BlameGoldie;
@@ -18,14 +19,14 @@ import Prefixes.Prefixes;
 import Prefixes.PrefixesMenu;
 import Prefixes.ProBuilder;
 import Prefixes.ProPvper;
-import abraham.MySQLAPI;
-import abraham.SQLManager;
 
 
 public class BungeeTokens extends JavaPlugin{
 
-	public MySQLAPI mySQLAPI = (MySQLAPI) getServer().getPluginManager().getPlugin("MySQLAPI");
-	public SQLManager sqlManager = new SQLManager(mySQLAPI);
+	//public MySQLAPI mySQLAPI = (MySQLAPI) getServer().getPluginManager().getPlugin("MySQLAPI");
+	//public static MySQLAPI mySQLAPI = new MySQLAPI();
+	public ConnectionPoolManager pool;
+	//public SQLManager sqlManager = new SQLManager(mySQLAPI);
 	public TokenSQLManager tokenSQLManager;
 	public TokenAPI tokenAPI;
 	public MainMenu mainMenu;
@@ -36,15 +37,17 @@ public class BungeeTokens extends JavaPlugin{
 	
 	@Override
 	public void onDisable() {
+		  pool.closePool();
 		tokenAPI.saveAllPlayersTokens();
 	}
 
 	@Override
 	public void onEnable() {
-		
+		createConfig();
 		
 		//Register Listeners
-		Bukkit.getServer().getPluginManager().registerEvents(new PlayerListener(this), this);
+		pool = new ConnectionPoolManager(this);
+		Bukkit.getServer().getPluginManager().registerEvents(new PlayerListena(this), this);
 		this.getCommand("tokens").setExecutor(new CommandListener(this));
 
 		tokenSQLManager = new TokenSQLManager(this);
@@ -62,7 +65,24 @@ public class BungeeTokens extends JavaPlugin{
 		
 	}
 
-	
+	 private void createConfig() {
+	        try {
+	            if (!getDataFolder().exists()) {
+	                getDataFolder().mkdirs();
+	            }
+	            File file = new File(getDataFolder(), "config.yml");
+	            if (!file.exists()) {
+	                getLogger().info("Config.yml not found, creating!");
+	                saveDefaultConfig();
+	            } else {
+	                getLogger().info("Config.yml found, loading!");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+
+	        }
+
+	    }
 	
 
 }

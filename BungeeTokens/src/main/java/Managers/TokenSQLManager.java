@@ -11,12 +11,12 @@ import org.bukkit.entity.Player;
 import BungeeTokens.BungeeTokens.BungeeTokens;
 
 public class TokenSQLManager {
-
 	private final BungeeTokens plugin;
 
 	public TokenSQLManager(BungeeTokens plugin) {
 		this.plugin = plugin;
-	}
+}
+	
 
 	/*
 	* insertNewPlayer(String, int)
@@ -29,7 +29,7 @@ public class TokenSQLManager {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		try {
-			conn = plugin.mySQLAPI.pool.getConnection();
+			conn = plugin.pool.getConnection();
 			ps = conn.prepareStatement(
 					"INSERT INTO userProfiles (UUID, tokens) VALUES ('" + playerStringUUID + "', " + tokenCount + ");");
 			ps.execute();
@@ -37,7 +37,7 @@ public class TokenSQLManager {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			plugin.mySQLAPI.pool.close(conn, ps, null);
+			plugin.pool.close(conn, ps, null);
 		}
 
 	}
@@ -54,7 +54,7 @@ public class TokenSQLManager {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		try {
-			conn = plugin.mySQLAPI.pool.getConnection();
+			conn = plugin.pool.getConnection();
 			ps = conn.prepareStatement(
 					"UPDATE userProfiles SET tokens = " + newTokenCount + " WHERE UUID = '" + playerStringUUID + "';");
 			ps.execute();
@@ -62,7 +62,7 @@ public class TokenSQLManager {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			plugin.mySQLAPI.pool.close(conn, ps, null);
+			plugin.pool.close(conn, ps, null);
 		}
 
 		return newTokenCount;
@@ -78,7 +78,7 @@ public class TokenSQLManager {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		try {
-			conn = plugin.mySQLAPI.pool.getConnection();
+			conn = plugin.pool.getConnection();
 			ps = conn.prepareStatement(
 					"UPDATE userProfiles SET tokens = " + setTokenCount + " WHERE UUID = '" + playerStringUUID + "';");
 			ps.executeUpdate();
@@ -86,7 +86,7 @@ public class TokenSQLManager {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			plugin.mySQLAPI.pool.close(conn, ps, null);
+			plugin.pool.close(conn, ps, null);
 		}
 
 	}
@@ -103,10 +103,11 @@ public class TokenSQLManager {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		try {
-			conn = plugin.mySQLAPI.pool.getConnection();
+			conn = plugin.pool.getConnection();
 			ps = conn.prepareStatement("SELECT * FROM userProfiles WHERE UUID = '" + playerStringUUID + "';");
 			ResultSet rs = ps.executeQuery();
 
+			Bukkit.getLogger().info("DDDDDDDDDDDDDDDDDDDDDDDDDDDDDD");
 			while (rs.next()) {
 				i++;
 				tokenCount = rs.getInt("tokens");
@@ -120,7 +121,7 @@ public class TokenSQLManager {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			plugin.mySQLAPI.pool.close(conn, ps, null);
+			plugin.pool.close(conn, ps, null);
 		}
 
 		return tokenCount;
