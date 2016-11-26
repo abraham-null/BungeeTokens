@@ -16,6 +16,7 @@ import Listeners.CommandListener;
 import Listeners.PlayerListena;
 import Managers.TokenSQLManager;
 import Menus.MainMenu;
+import Prefixes.BlameAjoobe;
 import Prefixes.BlameGoldie;
 import Prefixes.Prefixes;
 import Prefixes.PrefixesMenu;
@@ -69,6 +70,7 @@ public class BungeeTokens extends JavaPlugin{
 		prefixesArray.add(new ProPvper());
 		prefixesArray.add(new ProBuilder());
 		prefixesArray.add(new BlameGoldie());
+		prefixesArray.add(new BlameAjoobe());
 		//prefixesArray.add(new Nothing());
 		
 	}
