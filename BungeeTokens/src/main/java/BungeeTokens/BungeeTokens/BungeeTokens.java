@@ -19,6 +19,7 @@ import Menus.MainMenu;
 import Prefixes.BlameAjoobe;
 import Prefixes.BlameGoldie;
 import Prefixes.Creature;
+import Prefixes.Ferocious;
 import Prefixes.Prefixes;
 import Prefixes.PrefixesMenu;
 import Prefixes.Prince;
@@ -77,6 +78,7 @@ public class BungeeTokens extends JavaPlugin{
 		prefixesArray.add(new Prince());
 		prefixesArray.add(new Creature());
 		prefixesArray.add(new Princess());
+		prefixesArray.add(new Ferocious());
 		//prefixesArray.add(new Nothing());
 		
 	}
