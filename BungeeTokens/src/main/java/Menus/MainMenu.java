@@ -81,12 +81,13 @@ public class MainMenu implements Listener {
 	@EventHandler
 	public void onInventoryClick(InventoryClickEvent e) {
 		Player p = (Player) e.getWhoClicked();
-		e.setCancelled(true);
+		if(e.getCurrentItem() == null || e.getInventory() == null){
+			return;
+		}
 		
 		if (e.getClickedInventory().equals(inv)) {
-			if(e.getCurrentItem().equals(null) || e.getInventory().equals(null)){
-				return;
-			}
+			e.setCancelled(true);
+			
 
 			if (e.getCurrentItem().getType() == Material.FIREBALL){
 				

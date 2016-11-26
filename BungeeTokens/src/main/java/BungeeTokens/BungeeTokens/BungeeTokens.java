@@ -7,9 +7,11 @@ import java.util.List;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import API.TokenAPI;
+import Droppers.TokenDropper;
 import Listeners.CommandListener;
 import Listeners.PlayerListena;
 import Managers.TokenSQLManager;
@@ -31,7 +33,9 @@ public class BungeeTokens extends JavaPlugin{
 	public TokenAPI tokenAPI;
 	public MainMenu mainMenu;
 	public PrefixesMenu prefixesMenu;
+	public TokenDropper tokenDropper;
 	public List<Prefixes> prefixesArray = new ArrayList<Prefixes>();
+	public ItemStack tokenItem;
 	
 	public HashMap<UUID, Integer> playerTokensHashMap = new HashMap<UUID, Integer>();
 	
@@ -45,6 +49,7 @@ public class BungeeTokens extends JavaPlugin{
 	public void onEnable() {
 		createConfig();
 		
+		
 		//Register Listeners
 		pool = new ConnectionPoolManager(this);
 		Bukkit.getServer().getPluginManager().registerEvents(new PlayerListena(this), this);
@@ -56,7 +61,10 @@ public class BungeeTokens extends JavaPlugin{
 		tokenAPI = new TokenAPI(this);
 		prefixesMenu = new PrefixesMenu(this);
 		Bukkit.getServer().getPluginManager().registerEvents(prefixesMenu, this);
+		tokenDropper = new TokenDropper(this);
+		Bukkit.getServer().getPluginManager().registerEvents(tokenDropper, this);
 		
+		tokenItem = tokenDropper.createToken();
 		
 		prefixesArray.add(new ProPvper());
 		prefixesArray.add(new ProBuilder());

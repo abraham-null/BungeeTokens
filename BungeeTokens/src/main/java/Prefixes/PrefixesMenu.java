@@ -31,9 +31,12 @@ public class PrefixesMenu implements Listener {
 	@EventHandler
 	public void onInventoryClick(InventoryClickEvent e) {
 		Player p = (Player) e.getWhoClicked();
-		e.setCancelled(true);
+		if(e.getCurrentItem() == null || e.getInventory() == null){
+			return;
+		}
 		
 		if (e.getClickedInventory().equals(inv)) {
+			e.setCancelled(true);
 			String clickedTitle = e.getCurrentItem().getItemMeta().getDisplayName();
 			
 			if(e.getCurrentItem().getType().equals(Material.GLASS_BOTTLE)){
