@@ -70,6 +70,7 @@ public class BungeeTokens extends JavaPlugin{
 		Bukkit.getServer().getPluginManager().registerEvents(tokenDropper, this);
 		
 		tokenItem = tokenDropper.createToken();
+		tokenDropper.randomLocDropToken();
 		
 		prefixesArray.add(new ProPvper());
 		prefixesArray.add(new ProBuilder());

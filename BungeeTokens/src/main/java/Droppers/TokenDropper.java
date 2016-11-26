@@ -1,11 +1,14 @@
 package Droppers;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
+import org.bukkit.World;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -17,6 +20,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.scheduler.BukkitScheduler;
 
 import BungeeTokens.BungeeTokens.BungeeTokens;
 
@@ -28,6 +32,47 @@ public class TokenDropper implements Listener {
 		this.plugin = plugin;
 	}
 
+	public void randomLocDropToken() {
+		BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
+		scheduler.scheduleSyncRepeatingTask(plugin, new Runnable() {
+			public void run() {
+
+				
+				if(Bukkit.getServer().getOnlinePlayers().size() >= 1){
+
+				List<Player> rpl = new ArrayList<Player>();
+				 
+				for(Player all:Bukkit.getServer().getOnlinePlayers()){
+					rpl.add(all.getPlayer());
+					}
+				
+				Random randomGenerator = new Random();
+				int randomInt = randomGenerator.nextInt(rpl.size());
+				
+				int randomXDistance =+ generatRandomPositiveNegitiveValue(17,88);
+				
+				int randomZDistance =+ generatRandomPositiveNegitiveValue(24,77);
+				
+				Player rp = rpl.get(randomInt);
+				World world = rp.getWorld();
+				//build a token
+				ItemStack paperToken = plugin.tokenItem;
+				
+				Location loc = rp.getLocation();
+				loc.add(randomXDistance, 3, randomZDistance);
+				
+				double y = world.getHighestBlockAt((int)loc.getX(), (int) loc.getZ()).getY();
+				
+				Location dropLoc = new Location(world, (int)loc.getX(), (int)(y+5), (int)loc.getZ());
+				
+				dropLoc.getBlock().getWorld().dropItemNaturally(loc.getBlock().getLocation(), paperToken);
+				
+				}
+			}
+		}, 1205660, 1220);
+	//	}, 30, 30);
+	}
+	
 	@EventHandler
 	public void onBreak(BlockBreakEvent e) {
 		dropToken(e.getBlock().getLocation());
@@ -121,5 +166,11 @@ public class TokenDropper implements Listener {
 
 		return paperToken;
 
+	}
+	
+	public static int generatRandomPositiveNegitiveValue(int max , int min) {
+	    //Random rand = new Random();
+	    int ii = -min + (int) (Math.random() * ((max - (-min)) + 1));
+	    return ii;
 	}
 }
