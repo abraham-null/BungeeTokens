@@ -18,8 +18,10 @@ import Managers.TokenSQLManager;
 import Menus.MainMenu;
 import Prefixes.BlameAjoobe;
 import Prefixes.BlameGoldie;
+import Prefixes.Creature;
 import Prefixes.Prefixes;
 import Prefixes.PrefixesMenu;
+import Prefixes.Prince;
 import Prefixes.ProBuilder;
 import Prefixes.ProPvper;
 
@@ -71,6 +73,8 @@ public class BungeeTokens extends JavaPlugin{
 		prefixesArray.add(new ProBuilder());
 		prefixesArray.add(new BlameGoldie());
 		prefixesArray.add(new BlameAjoobe());
+		prefixesArray.add(new Prince());
+		prefixesArray.add(new Creature());
 		//prefixesArray.add(new Nothing());
 		
 	}
