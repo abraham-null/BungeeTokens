@@ -22,6 +22,7 @@ import Prefixes.Creature;
 import Prefixes.Prefixes;
 import Prefixes.PrefixesMenu;
 import Prefixes.Prince;
+import Prefixes.Princess;
 import Prefixes.ProBuilder;
 import Prefixes.ProPvper;
 
@@ -75,6 +76,7 @@ public class BungeeTokens extends JavaPlugin{
 		prefixesArray.add(new BlameAjoobe());
 		prefixesArray.add(new Prince());
 		prefixesArray.add(new Creature());
+		prefixesArray.add(new Princess());
 		//prefixesArray.add(new Nothing());
 		
 	}
