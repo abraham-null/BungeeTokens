@@ -21,6 +21,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import com.avaje.ebeaninternal.server.deploy.generatedproperty.GeneratedInsertTimestamp;
 
+import API.TokenAPI;
 import BungeeTokens.BungeeTokens.BungeeTokens;
 
 public class TokenDropper implements Listener {
@@ -60,13 +61,24 @@ public class TokenDropper implements Listener {
 	public void onPlayerUse(PlayerInteractEvent e){
 	    Player p = e.getPlayer();
 	   
-	    if((p.getItemInHand().getType() == Material.PAPER) && (p.getItemInHand().getEnchantmentLevel(Enchantment.FIRE_ASPECT) == 1)){
+	    if((p.getItemInHand().isSimilar(plugin.tokenItem))){
 	    	 Bukkit.getLogger().info("SSSSSSSSSSSSSSSSSSSSSS");
 			Random ran = new Random();
 			int tokenAmount = ran.nextInt(100) + 20;
 			
+			 ItemStack stack = p.getItemInHand();
+			 
+			if (stack.getAmount() > 1){
+				stack.setAmount(stack.getAmount() - 1);
+				}
+		    else
+		    	{p.getInventory().clear((p.getInventory().getHeldItemSlot()));
+		  }
+			
+			plugin.tokenAPI.addPlayerTokensFromHashMap(p, tokenAmount);
+			
 			//e.setCancelled(true);
-			((Entity) e.getItem()).remove();
+			Bukkit.broadcastMessage("tokens: "+tokenAmount);
 	    }
 	}
 	
