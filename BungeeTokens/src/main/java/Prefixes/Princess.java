@@ -11,7 +11,7 @@ public class Princess extends Prefixes{
 	public Princess(){
 		
 		this.material = Material.NAME_TAG;
-		this.invPosition = 20;
+		this.invPosition = 19;
 		this.perm = "thelasthero.princess";
 		this.cost = 2500;
 		
