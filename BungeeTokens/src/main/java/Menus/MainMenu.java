@@ -98,6 +98,7 @@ public class MainMenu implements Listener {
 			}
 
 			if (e.getCurrentItem().getType() == Material.EGG){
+				p.openInventory(plugin.petsMenu.showPetsMenu(p));
 				
 			}
 			

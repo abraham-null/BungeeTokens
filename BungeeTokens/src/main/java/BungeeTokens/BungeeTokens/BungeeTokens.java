@@ -24,6 +24,10 @@ import Particles.Magic;
 import Particles.Particles;
 import Particles.ParticlesMenu;
 import Particles.Slime;
+import Pets.Bat;
+import Pets.Blaze;
+import Pets.Pets;
+import Pets.PetsMenu;
 import Prefixes.BlameAjoobe;
 import Prefixes.BlameGoldie;
 import Prefixes.Creature;
@@ -47,9 +51,11 @@ public class BungeeTokens extends JavaPlugin{
 	public MainMenu mainMenu;
 	public PrefixesMenu prefixesMenu;
 	public ParticlesMenu particlesMenu;
+	public PetsMenu petsMenu;
 	public TokenDropper tokenDropper;
 	public List<Prefixes> prefixesArray = new ArrayList<Prefixes>();
 	public List<Particles> particlesArray = new ArrayList<Particles>();
+	public List<Pets> petsArray = new ArrayList<Pets>();
 	public ItemStack tokenItem;
 	
 	public HashMap<UUID, Integer> playerTokensHashMap = new HashMap<UUID, Integer>();
@@ -78,6 +84,8 @@ public class BungeeTokens extends JavaPlugin{
 		Bukkit.getServer().getPluginManager().registerEvents(prefixesMenu, this);
 		particlesMenu = new ParticlesMenu(this);
 		Bukkit.getServer().getPluginManager().registerEvents(particlesMenu, this);
+		petsMenu = new PetsMenu(this);
+		Bukkit.getServer().getPluginManager().registerEvents(petsMenu, this);
 		tokenDropper = new TokenDropper(this);
 		Bukkit.getServer().getPluginManager().registerEvents(tokenDropper, this);
 		
@@ -105,6 +113,13 @@ public class BungeeTokens extends JavaPlugin{
 		particlesArray.add(new Heart());
 		particlesArray.add(new Angry());
 		particlesArray.add(new Magic());
+		
+		
+		//-----------
+		//PARTICLES
+		//----------
+		petsArray.add(new Bat());
+		petsArray.add(new Blaze());
 		
 	}
 	
