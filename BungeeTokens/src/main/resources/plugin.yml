@@ -5,6 +5,7 @@ author: abraham-null
 authors: [abraham-null] 
 website: http://ackeron.com
 main: BungeeTokens.BungeeTokens.BungeeTokens
+depend: [EchoPet,SuperTrails]
 commands:
   tokens:
     description: tokens

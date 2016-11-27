@@ -9,6 +9,10 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import com.dsh105.echopet.api.EchoPetAPI;
+import com.dsh105.echopet.compat.api.entity.PetType;
+import com.dsh105.echopet.compat.nms.v1_11_R1.entity.type.EntityBatPet;
+
 import BungeeTokens.BungeeTokens.BungeeTokens;
 import me.kvq.plugin.trails.API.SuperTrailsAPI;
 
@@ -32,7 +36,7 @@ public class PlayerListena implements Listener{
 		int playerTokens = plugin.tokenSQLManager.getPlayerTokens(playerUUIDString);
 		
 		plugin.playerTokensHashMap.put(playerUUID, playerTokens);
-		
+		//EchoPetAPI.getAPI().givePet(p,PetType.BLAZE, true);
 	}
 
     /*

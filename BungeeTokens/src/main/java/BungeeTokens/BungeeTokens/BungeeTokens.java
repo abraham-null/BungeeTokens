@@ -10,6 +10,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.dsh105.echopet.api.EchoPetAPI;
+
 import API.TokenAPI;
 import Droppers.TokenDropper;
 import Listeners.CommandListener;
@@ -104,6 +106,10 @@ public class BungeeTokens extends JavaPlugin{
 		particlesArray.add(new Angry());
 		particlesArray.add(new Magic());
 		
+	}
+	
+	public EchoPetAPI getEchoPetAPI() {
+	    return EchoPetAPI.getAPI();
 	}
 
 	 private void createConfig() {
