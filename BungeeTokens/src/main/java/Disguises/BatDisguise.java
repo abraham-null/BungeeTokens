@@ -20,6 +20,7 @@ public class BatDisguise extends Disguises{
 		this.perm = "thelasthero.disguises.bat";
 		this.cost = 4500;
 		this.mobDisguise = new MobDisguise(DisguiseType.BAT, false);
+		this.mobDisguise.setShowName(true);
 		
 		
 		this.title = ChatColor.GREEN.toString() + "Bat Disguise";
