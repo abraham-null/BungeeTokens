@@ -57,6 +57,7 @@ public class BungeeTokens extends JavaPlugin{
 	public List<Particles> particlesArray = new ArrayList<Particles>();
 	public List<Pets> petsArray = new ArrayList<Pets>();
 	public ItemStack tokenItem;
+	//public DisguiseAPI disguiseApi;
 	
 	public HashMap<UUID, Integer> playerTokensHashMap = new HashMap<UUID, Integer>();
 	
@@ -88,6 +89,7 @@ public class BungeeTokens extends JavaPlugin{
 		Bukkit.getServer().getPluginManager().registerEvents(petsMenu, this);
 		tokenDropper = new TokenDropper(this);
 		Bukkit.getServer().getPluginManager().registerEvents(tokenDropper, this);
+		//disguiseApi = getServer().getServicesManager().getRegistration(DisguiseAPI.class).getProvider();
 		
 		tokenItem = tokenDropper.createToken();
 		tokenDropper.randomLocDropToken();

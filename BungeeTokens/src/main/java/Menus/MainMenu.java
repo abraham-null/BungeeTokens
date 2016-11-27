@@ -60,7 +60,7 @@ public class MainMenu implements Listener {
 		lore.add(ChatColor.YELLOW.toString() + "Applys to all servers and lasts forever!");
 		lore.add("");
 		lore.add(ChatColor.GRAY + "Access with " + ChatColor.AQUA + "/titles");
-		inv.setItem(31, createMainMenuTokenItemStack(Material.NAME_TAG, ChatColor.AQUA.toString() + "Titles", lore));
+		inv.setItem(30, createMainMenuTokenItemStack(Material.NAME_TAG, ChatColor.AQUA.toString() + "Titles", lore));
 		lore.clear();
 
 		// pets
@@ -72,7 +72,19 @@ public class MainMenu implements Listener {
 		lore.add(ChatColor.YELLOW.toString() + "Applys to all servers and lasts forever!");
 		lore.add("");
 		lore.add(ChatColor.GRAY + "Access with " + ChatColor.AQUA + "/pets");
-		inv.setItem(33, createMainMenuTokenItemStack(Material.EGG, ChatColor.AQUA.toString() + "Pets", lore));
+		inv.setItem(31, createMainMenuTokenItemStack(Material.EGG, ChatColor.AQUA.toString() + "Pets", lore));
+		lore.clear();
+		
+		// disguises
+		lore.clear();
+		lore.add("");
+		lore.add(ChatColor.GRAY.toString() + "Unlock a new sidekick or");
+		lore.add(ChatColor.GRAY.toString() + "best friend by your side!");
+		lore.add("");
+		lore.add(ChatColor.YELLOW.toString() + "Applys to all servers and lasts forever!");
+		lore.add("");
+		lore.add(ChatColor.GRAY + "Access with " + ChatColor.AQUA + "/pets");
+		inv.setItem(32, createMainMenuTokenItemStack(Material.DEAD_BUSH, ChatColor.AQUA.toString() + "Disguises", lore));
 		lore.clear();
 
 		p.openInventory(inv);
