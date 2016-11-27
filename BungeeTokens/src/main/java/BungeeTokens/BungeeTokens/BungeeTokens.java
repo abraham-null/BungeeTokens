@@ -16,6 +16,12 @@ import Listeners.CommandListener;
 import Listeners.PlayerListena;
 import Managers.TokenSQLManager;
 import Menus.MainMenu;
+import Particles.Angry;
+import Particles.Heart;
+import Particles.Magic;
+import Particles.Particles;
+import Particles.ParticlesMenu;
+import Particles.Slime;
 import Prefixes.BlameAjoobe;
 import Prefixes.BlameGoldie;
 import Prefixes.Creature;
@@ -38,8 +44,10 @@ public class BungeeTokens extends JavaPlugin{
 	public TokenAPI tokenAPI;
 	public MainMenu mainMenu;
 	public PrefixesMenu prefixesMenu;
+	public ParticlesMenu particlesMenu;
 	public TokenDropper tokenDropper;
 	public List<Prefixes> prefixesArray = new ArrayList<Prefixes>();
+	public List<Particles> particlesArray = new ArrayList<Particles>();
 	public ItemStack tokenItem;
 	
 	public HashMap<UUID, Integer> playerTokensHashMap = new HashMap<UUID, Integer>();
@@ -66,12 +74,17 @@ public class BungeeTokens extends JavaPlugin{
 		tokenAPI = new TokenAPI(this);
 		prefixesMenu = new PrefixesMenu(this);
 		Bukkit.getServer().getPluginManager().registerEvents(prefixesMenu, this);
+		particlesMenu = new ParticlesMenu(this);
+		Bukkit.getServer().getPluginManager().registerEvents(particlesMenu, this);
 		tokenDropper = new TokenDropper(this);
 		Bukkit.getServer().getPluginManager().registerEvents(tokenDropper, this);
 		
 		tokenItem = tokenDropper.createToken();
 		tokenDropper.randomLocDropToken();
 		
+		//-----------
+		//PREFIXES
+		//-----------
 		prefixesArray.add(new ProPvper());
 		prefixesArray.add(new ProBuilder());
 		prefixesArray.add(new BlameGoldie());
@@ -81,6 +94,15 @@ public class BungeeTokens extends JavaPlugin{
 		prefixesArray.add(new Princess());
 		prefixesArray.add(new Ferocious());
 		//prefixesArray.add(new Nothing());
+		
+		
+		//-----------
+		//PARTICLES
+		//----------
+		particlesArray.add(new Slime());
+		particlesArray.add(new Heart());
+		particlesArray.add(new Angry());
+		particlesArray.add(new Magic());
 		
 	}
 

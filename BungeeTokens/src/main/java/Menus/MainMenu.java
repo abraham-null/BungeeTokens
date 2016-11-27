@@ -90,7 +90,7 @@ public class MainMenu implements Listener {
 			
 
 			if (e.getCurrentItem().getType() == Material.FIREBALL){
-				
+				p.openInventory(plugin.particlesMenu.showParticlesMenu(p));
 			}
 
 			if (e.getCurrentItem().getType() == Material.NAME_TAG){

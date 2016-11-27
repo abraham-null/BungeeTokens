@@ -10,6 +10,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import BungeeTokens.BungeeTokens.BungeeTokens;
+import me.kvq.plugin.trails.API.SuperTrailsAPI;
 
 public class PlayerListena implements Listener{
 	
@@ -31,6 +32,7 @@ public class PlayerListena implements Listener{
 		int playerTokens = plugin.tokenSQLManager.getPlayerTokens(playerUUIDString);
 		
 		plugin.playerTokensHashMap.put(playerUUID, playerTokens);
+		
 	}
 
     /*
