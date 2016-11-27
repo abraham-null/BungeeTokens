@@ -13,6 +13,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.dsh105.echopet.api.EchoPetAPI;
 
 import API.TokenAPI;
+import Disguises.Disguises;
+import Disguises.DisguisesMenu;
 import Droppers.TokenDropper;
 import Listeners.CommandListener;
 import Listeners.PlayerListena;
@@ -52,10 +54,12 @@ public class BungeeTokens extends JavaPlugin{
 	public PrefixesMenu prefixesMenu;
 	public ParticlesMenu particlesMenu;
 	public PetsMenu petsMenu;
+	public DisguisesMenu disguisesMenu;
 	public TokenDropper tokenDropper;
 	public List<Prefixes> prefixesArray = new ArrayList<Prefixes>();
 	public List<Particles> particlesArray = new ArrayList<Particles>();
 	public List<Pets> petsArray = new ArrayList<Pets>();
+	public List<Disguises> disguisesArray = new ArrayList<Disguises>();
 	public ItemStack tokenItem;
 	//public DisguiseAPI disguiseApi;
 	
@@ -87,6 +91,8 @@ public class BungeeTokens extends JavaPlugin{
 		Bukkit.getServer().getPluginManager().registerEvents(particlesMenu, this);
 		petsMenu = new PetsMenu(this);
 		Bukkit.getServer().getPluginManager().registerEvents(petsMenu, this);
+		disguisesMenu = new DisguisesMenu(this);
+		Bukkit.getServer().getPluginManager().registerEvents(petsMenu, this);
 		tokenDropper = new TokenDropper(this);
 		Bukkit.getServer().getPluginManager().registerEvents(tokenDropper, this);
 		//disguiseApi = getServer().getServicesManager().getRegistration(DisguiseAPI.class).getProvider();
@@ -116,12 +122,19 @@ public class BungeeTokens extends JavaPlugin{
 		particlesArray.add(new Angry());
 		particlesArray.add(new Magic());
 		
-		
+
 		//-----------
 		//PARTICLES
 		//----------
 		petsArray.add(new Bat());
 		petsArray.add(new Blaze());
+		
+		
+		//-----------
+		//DISGUISES
+		//----------
+		//disguisesArray.add(new Bat());
+		
 		
 	}
 	

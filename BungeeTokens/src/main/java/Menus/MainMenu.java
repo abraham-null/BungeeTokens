@@ -114,6 +114,11 @@ public class MainMenu implements Listener {
 				
 			}
 			
+			if (e.getCurrentItem().getType() == Material.DEAD_BUSH){
+				p.openInventory(plugin.disguisesMenu.showDisguisesMenu(p));
+				
+			}
+			
 			
 		}
 		
