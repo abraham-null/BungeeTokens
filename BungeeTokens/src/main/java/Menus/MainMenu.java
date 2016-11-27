@@ -83,7 +83,7 @@ public class MainMenu implements Listener {
 		lore.add("");
 		lore.add(ChatColor.YELLOW.toString() + "Applys to all servers and lasts forever!");
 		lore.add("");
-		lore.add(ChatColor.GRAY + "Access with " + ChatColor.AQUA + "/pets");
+		lore.add(ChatColor.GRAY + "Access with " + ChatColor.AQUA + "/disguises");
 		inv.setItem(32, createMainMenuTokenItemStack(Material.DEAD_BUSH, ChatColor.AQUA.toString() + "Disguises", lore));
 		lore.clear();
 

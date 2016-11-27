@@ -13,6 +13,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import com.dsh105.echopet.api.EchoPetAPI;
 
 import API.TokenAPI;
+import Disguises.BatDisguise;
 import Disguises.Disguises;
 import Disguises.DisguisesMenu;
 import Droppers.TokenDropper;
@@ -92,7 +93,7 @@ public class BungeeTokens extends JavaPlugin{
 		petsMenu = new PetsMenu(this);
 		Bukkit.getServer().getPluginManager().registerEvents(petsMenu, this);
 		disguisesMenu = new DisguisesMenu(this);
-		Bukkit.getServer().getPluginManager().registerEvents(petsMenu, this);
+		Bukkit.getServer().getPluginManager().registerEvents(disguisesMenu, this);
 		tokenDropper = new TokenDropper(this);
 		Bukkit.getServer().getPluginManager().registerEvents(tokenDropper, this);
 		//disguiseApi = getServer().getServicesManager().getRegistration(DisguiseAPI.class).getProvider();
@@ -133,7 +134,7 @@ public class BungeeTokens extends JavaPlugin{
 		//-----------
 		//DISGUISES
 		//----------
-		//disguisesArray.add(new Bat());
+		disguisesArray.add(new BatDisguise());
 		
 		
 	}
