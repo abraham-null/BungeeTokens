@@ -11,7 +11,7 @@ public class Heart extends Particles{
 	public Heart(){
 		
 		this.material = Material.BONE;
-		this.invPosition = 22;
+		this.invPosition = 9;
 		this.perm = "thelasthero.particles.heart";
 		this.cost = 4500;
 		this.trailID = 1;

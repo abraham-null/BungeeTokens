@@ -10,8 +10,8 @@ public class Angry extends Particles{
 	
 	public Angry(){
 		
-		this.material = Material.FIRE;
-		this.invPosition = 21;
+		this.material = Material.FIREWORK;
+		this.invPosition = 10;
 		this.perm = "thelasthero.particles.angry";
 		this.cost = 4500;
 		this.trailID = 2;

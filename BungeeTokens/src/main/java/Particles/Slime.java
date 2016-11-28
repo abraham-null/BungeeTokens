@@ -11,7 +11,7 @@ public class Slime extends Particles{
 	public Slime(){
 		
 		this.material = Material.SLIME_BALL;
-		this.invPosition = 23;
+		this.invPosition = 29;
 		this.perm = "thelasthero.particles.slime";
 		this.cost = 4500;
 		this.trailID = 21;

@@ -11,7 +11,7 @@ public class Magic extends Particles{
 	public Magic(){
 		
 		this.material = Material.BOOK;
-		this.invPosition = 20;
+		this.invPosition = 11;
 		this.perm = "thelasthero.particles.magic";
 		this.cost = 4500;
 		this.trailID = 3;
