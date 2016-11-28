@@ -22,6 +22,7 @@ import Listeners.PlayerListena;
 import Managers.TokenSQLManager;
 import Menus.MainMenu;
 import Particles.Angry;
+import Particles.Ender;
 import Particles.Heart;
 import Particles.Magic;
 import Particles.Particles;
@@ -29,6 +30,7 @@ import Particles.ParticlesMenu;
 import Particles.Slime;
 import Pets.Bat;
 import Pets.Blaze;
+import Pets.Enderdragon;
 import Pets.Pets;
 import Pets.PetsMenu;
 import Prefixes.BlameAjoobe;
@@ -39,6 +41,7 @@ import Prefixes.Demon;
 import Prefixes.Ferocious;
 import Prefixes.God;
 import Prefixes.King;
+import Prefixes.Pikachu;
 import Prefixes.Prefixes;
 import Prefixes.PrefixesMenu;
 import Prefixes.Prince;
@@ -122,6 +125,7 @@ public class BungeeTokens extends JavaPlugin{
 		prefixesArray.add(new King());
 		prefixesArray.add(new Demigod());
 		prefixesArray.add(new God());
+		prefixesArray.add(new Pikachu());
 		//prefixesArray.add(new Nothing());
 		
 		
@@ -132,6 +136,7 @@ public class BungeeTokens extends JavaPlugin{
 		particlesArray.add(new Heart());
 		particlesArray.add(new Angry());
 		particlesArray.add(new Magic());
+		particlesArray.add(new Ender());
 		
 
 		//-----------
@@ -139,6 +144,7 @@ public class BungeeTokens extends JavaPlugin{
 		//----------
 		petsArray.add(new Bat());
 		petsArray.add(new Blaze());
+		petsArray.add(new Enderdragon());
 		
 		
 		//-----------
