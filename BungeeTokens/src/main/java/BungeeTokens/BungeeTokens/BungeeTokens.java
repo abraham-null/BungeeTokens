@@ -34,13 +34,18 @@ import Pets.PetsMenu;
 import Prefixes.BlameAjoobe;
 import Prefixes.BlameGoldie;
 import Prefixes.Creature;
+import Prefixes.Demigod;
+import Prefixes.Demon;
 import Prefixes.Ferocious;
+import Prefixes.God;
+import Prefixes.King;
 import Prefixes.Prefixes;
 import Prefixes.PrefixesMenu;
 import Prefixes.Prince;
 import Prefixes.Princess;
 import Prefixes.ProBuilder;
 import Prefixes.ProPvper;
+import Prefixes.Queen;
 
 
 public class BungeeTokens extends JavaPlugin{
@@ -112,6 +117,11 @@ public class BungeeTokens extends JavaPlugin{
 		prefixesArray.add(new Creature());
 		prefixesArray.add(new Princess());
 		prefixesArray.add(new Ferocious());
+		prefixesArray.add(new Demon());
+		prefixesArray.add(new Queen());
+		prefixesArray.add(new King());
+		prefixesArray.add(new Demigod());
+		prefixesArray.add(new God());
 		//prefixesArray.add(new Nothing());
 		
 		
