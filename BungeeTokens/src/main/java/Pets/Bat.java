@@ -14,7 +14,7 @@ public class Bat extends Pets{
 		
 		this.material = Material.SKULL_ITEM;
 		this.invPosition = 23;
-		this.perm = "thelasthero.particles.slime";
+		this.perm = "thelasthero.pets.bat";
 		this.cost = 4500;
 		this.petID = PetType.BAT;
 		this.owner = "MHF_BAT";

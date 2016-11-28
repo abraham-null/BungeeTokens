@@ -45,8 +45,8 @@ public class PlayerListena implements Listener {
 		disguise.setCustomName(p.getDisplayName());
 		
 		plugin.disguiseApi.disguiseToAll(p, disguise);*/
-		MobDisguise mobDisguise = new MobDisguise(DisguiseType.COW, false);
-	DisguiseAPI.disguiseToAll(p, mobDisguise);
+	//	MobDisguise mobDisguise = new MobDisguise(DisguiseType.COW, false);
+//	DisguiseAPI.disguiseToAll(p, mobDisguise);
 	}
 
 	/*
