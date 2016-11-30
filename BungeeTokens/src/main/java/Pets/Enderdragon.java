@@ -1,9 +1,10 @@
 package Pets;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
 import com.dsh105.echopet.compat.api.entity.PetType;
+
+import net.md_5.bungee.api.ChatColor;
 
 public class Enderdragon extends Pets{
 	

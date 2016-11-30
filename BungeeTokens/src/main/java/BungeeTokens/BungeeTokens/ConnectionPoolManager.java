@@ -5,12 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import org.bukkit.Bukkit;
-
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-
-import BungeeTokens.BungeeTokens.BungeeTokens;
 
 
 public class ConnectionPoolManager {

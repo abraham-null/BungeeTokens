@@ -54,11 +54,13 @@ import Particles.WhiteMagic;
 import Particles.WitchMagic;
 import Pets.Bat;
 import Pets.Blaze;
+import Pets.Chicken;
 import Pets.Enderdragon;
 import Pets.Pets;
 import Pets.PetsMenu;
 import Prefixes.BlameAjoobe;
 import Prefixes.BlameGoldie;
+import Prefixes.Buttercup;
 import Prefixes.Creature;
 import Prefixes.Demigod;
 import Prefixes.Demon;
@@ -150,6 +152,7 @@ public class BungeeTokens extends JavaPlugin{
 		prefixesArray.add(new Demigod());
 		prefixesArray.add(new God());
 		prefixesArray.add(new Pikachu());
+		prefixesArray.add(new Buttercup());
 		//prefixesArray.add(new Nothing());
 		
 		
@@ -193,6 +196,7 @@ public class BungeeTokens extends JavaPlugin{
 		petsArray.add(new Bat());
 		petsArray.add(new Blaze());
 		petsArray.add(new Enderdragon());
+		petsArray.add(new Chicken());
 		
 		
 		//-----------

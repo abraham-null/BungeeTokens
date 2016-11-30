@@ -1,12 +1,10 @@
 package Disguises;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
-
-import com.dsh105.echopet.compat.api.entity.PetType;
 
 import me.libraryaddict.disguise.disguisetypes.DisguiseType;
 import me.libraryaddict.disguise.disguisetypes.MobDisguise;
+import net.md_5.bungee.api.ChatColor;
 
 public class BatDisguise extends Disguises{
 	

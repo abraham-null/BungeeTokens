@@ -4,7 +4,6 @@ import java.util.UUID;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerUnregisterChannelEvent;
 
 import BungeeTokens.BungeeTokens.BungeeTokens;
 

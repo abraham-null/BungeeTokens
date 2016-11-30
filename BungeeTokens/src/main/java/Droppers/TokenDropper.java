@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Random;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
@@ -23,6 +22,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.scheduler.BukkitScheduler;
 
 import BungeeTokens.BungeeTokens.BungeeTokens;
+import net.md_5.bungee.api.ChatColor;
 
 public class TokenDropper implements Listener {
 

@@ -3,7 +3,6 @@ package Particles;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,8 +14,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import BungeeTokens.BungeeTokens.BungeeTokens;
-import Prefixes.Prefixes;
 import me.kvq.plugin.trails.API.SuperTrailsAPI;
+import net.md_5.bungee.api.ChatColor;
 
 
 public class ParticlesMenu implements Listener{

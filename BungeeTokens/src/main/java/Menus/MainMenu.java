@@ -1,27 +1,21 @@
 package Menus;
 
-import java.net.NetworkInterface;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.plugin.Plugin;
 
 import BungeeTokens.BungeeTokens.BungeeTokens;
-import Managers.TokenSQLManager;
+import net.md_5.bungee.api.ChatColor;
 
 public class MainMenu implements Listener {
 

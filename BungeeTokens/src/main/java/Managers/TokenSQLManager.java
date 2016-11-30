@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
 
 import BungeeTokens.BungeeTokens.BungeeTokens;
 

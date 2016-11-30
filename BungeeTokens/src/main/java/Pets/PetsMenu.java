@@ -3,7 +3,6 @@ package Pets;
 import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -19,6 +18,7 @@ import com.dsh105.echopet.api.EchoPetAPI;
 import com.dsh105.echopet.compat.api.entity.PetType;
 
 import BungeeTokens.BungeeTokens.BungeeTokens;
+import net.md_5.bungee.api.ChatColor;
 
 
 public class PetsMenu implements Listener{

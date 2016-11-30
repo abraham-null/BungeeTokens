@@ -1,7 +1,8 @@
 package Prefixes;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Material;
+
+import net.md_5.bungee.api.ChatColor;
 
 public class Queen extends Prefixes{
 	

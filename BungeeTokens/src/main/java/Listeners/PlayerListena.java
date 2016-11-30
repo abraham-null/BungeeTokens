@@ -2,7 +2,6 @@ package Listeners;
 
 import java.util.UUID;
 
-import org.bukkit.DyeColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,9 +9,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
 import BungeeTokens.BungeeTokens.BungeeTokens;
-import me.libraryaddict.disguise.DisguiseAPI;
-import me.libraryaddict.disguise.disguisetypes.DisguiseType;
-import me.libraryaddict.disguise.disguisetypes.MobDisguise;
 
 public class PlayerListena implements Listener {
 
