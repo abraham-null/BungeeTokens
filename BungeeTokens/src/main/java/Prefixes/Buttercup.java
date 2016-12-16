@@ -16,7 +16,7 @@ public class Buttercup extends Prefixes{
 		this.perm = "thelasthero.buttercup";
 		this.cost = 1750;
 		
-		this.title = ChatColor.DARK_BLUE.toString() + "["+ ChatColor.RED.toString() + "buttercup" 
+		this.title = ChatColor.DARK_BLUE.toString() + "["+ ChatColor.RED.toString() + "Buttercup" 
 				 + ChatColor.DARK_BLUE.toString() + "] " + ChatColor.LIGHT_PURPLE;
 
 		this.displayTitle =  this.title;

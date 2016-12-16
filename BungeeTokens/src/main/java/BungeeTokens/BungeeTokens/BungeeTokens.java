@@ -61,11 +61,16 @@ import Pets.PetsMenu;
 import Prefixes.BlameAjoobe;
 import Prefixes.BlameGoldie;
 import Prefixes.Buttercup;
+import Prefixes.Champion;
+import Prefixes.Chemist;
+import Prefixes.Courageous;
 import Prefixes.Creature;
 import Prefixes.Demigod;
 import Prefixes.Demon;
 import Prefixes.Ferocious;
+import Prefixes.Foxy;
 import Prefixes.God;
+import Prefixes.Hero;
 import Prefixes.King;
 import Prefixes.Pikachu;
 import Prefixes.Prefixes;
@@ -75,6 +80,13 @@ import Prefixes.Princess;
 import Prefixes.ProBuilder;
 import Prefixes.ProPvper;
 import Prefixes.Queen;
+import Prefixes.Rogue;
+import Prefixes.SupremeVillain;
+import Prefixes.UltimateHero;
+import Prefixes.Villain;
+import Prefixes.Warrior;
+import Prefixes.WitherKing;
+import Prefixes.WitherQueen;
 
 
 public class BungeeTokens extends JavaPlugin{
@@ -153,6 +165,18 @@ public class BungeeTokens extends JavaPlugin{
 		prefixesArray.add(new God());
 		prefixesArray.add(new Pikachu());
 		prefixesArray.add(new Buttercup());
+		prefixesArray.add(new WitherKing());
+		prefixesArray.add(new WitherQueen());
+		prefixesArray.add(new Foxy());
+		prefixesArray.add(new Champion());
+		prefixesArray.add(new Chemist());
+		prefixesArray.add(new Courageous());
+		prefixesArray.add(new Rogue());
+		prefixesArray.add(new Villain());
+		prefixesArray.add(new Hero());
+		prefixesArray.add(new Warrior());
+		prefixesArray.add(new UltimateHero());
+		prefixesArray.add(new SupremeVillain());
 		//prefixesArray.add(new Nothing());
 		
 		

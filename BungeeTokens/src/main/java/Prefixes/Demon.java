@@ -16,7 +16,7 @@ public class Demon extends Prefixes{
 		this.perm = "thelasthero.demon";
 		this.cost = 6200;
 		
-		this.title = ChatColor.BLACK.toString() + "["+ ChatColor.GRAY.toString() + "☪ " + ChatColor.BOLD.toString() + ChatColor.DARK_RED.toString() + "Demon " + ChatColor.MAGIC.toString() + " ☪"
+		this.title = ChatColor.BLACK.toString() + "["+ ChatColor.GRAY.toString() + ChatColor.MAGIC.toString() + "☪ " + ChatColor.DARK_RED.toString() + ChatColor.BOLD.toString() + " Demon " + ChatColor.MAGIC.toString() + " ☪"
 				 + ChatColor.BLACK.toString() + "] " + ChatColor.BLACK;
 
 		this.displayTitle =  this.title;
