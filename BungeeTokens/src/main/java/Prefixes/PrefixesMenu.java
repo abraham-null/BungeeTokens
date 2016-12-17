@@ -126,6 +126,14 @@ public class PrefixesMenu implements Listener {
 		inv.setItem(4, createItem(Material.GLASS_BOTTLE, "Clear all titles", loreArray));
 		loreArray.clear();
 		
+		loreArray.clear();
+		loreArray.add("");
+		loreArray.add("Back to Main Menu");
+		loreArray.add("");
+		loreArray.add("");
+		inv.setItem(1, createItem(Material.SIGN_POST, "Back to Main Menu", loreArray));
+		loreArray.clear();
+		
 		return inv;
 	}
 	
