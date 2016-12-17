@@ -14,8 +14,13 @@ import com.dsh105.echopet.api.EchoPetAPI;
 
 import API.TokenAPI;
 import Disguises.BatDisguise;
+import Disguises.BlazeDisguise;
+import Disguises.ChickenDisguise;
+import Disguises.CowDisguise;
+import Disguises.CreeperDisguise;
 import Disguises.Disguises;
 import Disguises.DisguisesMenu;
+import Disguises.DonkeyDisguise;
 import Droppers.TokenDropper;
 import Listeners.CommandListener;
 import Listeners.PlayerListena;
@@ -227,6 +232,11 @@ public class BungeeTokens extends JavaPlugin{
 		//DISGUISES
 		//----------
 		disguisesArray.add(new BatDisguise());
+		disguisesArray.add(new BlazeDisguise());
+		disguisesArray.add(new ChickenDisguise());
+		disguisesArray.add(new CowDisguise());
+		disguisesArray.add(new CreeperDisguise());
+		disguisesArray.add(new DonkeyDisguise());
 		
 		
 	}
