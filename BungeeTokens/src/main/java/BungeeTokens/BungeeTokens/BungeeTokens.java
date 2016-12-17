@@ -220,7 +220,7 @@ public class BungeeTokens extends JavaPlugin{
 		
 
 		//-----------
-		//PARTICLES
+		//PETS
 		//----------
 		petsArray.add(new Bat());
 		petsArray.add(new Blaze());
