@@ -45,6 +45,10 @@ public class PrefixesMenu implements Listener {
 				p.closeInventory();
 			}
 			
+			if(e.getCurrentItem().getType().equals(Material.SIGN_POST)){
+				plugin.tokenAPI.showMenu(p);
+			}
+			
 			for (int i = 0; i < plugin.prefixesArray.size(); i++) {
 				Prefixes pre = plugin.prefixesArray.get(i);
 				if(pre.getDisplayTitle().equals(clickedTitle)){
