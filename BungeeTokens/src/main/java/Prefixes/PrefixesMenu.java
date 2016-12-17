@@ -45,7 +45,7 @@ public class PrefixesMenu implements Listener {
 				p.closeInventory();
 			}
 			
-			if(e.getCurrentItem().getType().equals(Material.REDSTONE_LAMP_ON)){
+			if(e.getCurrentItem().getType().equals(Material.REDSTONE_BLOCK)){
 				plugin.tokenAPI.showMenu(p);
 			}
 			
@@ -132,11 +132,11 @@ public class PrefixesMenu implements Listener {
 		
 		loreArray.clear();
 		loreArray.add("");
-		loreArray.add("Back to Main Menu");
+		loreArray.add("Return to Main Menu");
 		loreArray.add("");
 		loreArray.add("");
-		inv.setItem(45, createItem(Material.REDSTONE_LAMP_ON, "Back to Main Menu", loreArray));
-		inv.setItem(53, createItem(Material.REDSTONE_LAMP_ON, "Back to Main Menu", loreArray));
+		inv.setItem(45, createItem(Material.REDSTONE_BLOCK, "Back to Main Menu", loreArray));
+		inv.setItem(53, createItem(Material.REDSTONE_BLOCK, "Back to Main Menu", loreArray));
 		loreArray.clear();
 		
 		return inv;

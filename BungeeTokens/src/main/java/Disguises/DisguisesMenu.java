@@ -47,6 +47,9 @@ public class DisguisesMenu implements Listener{
 				p.sendMessage(ChatColor.GREEN.toString()+"Your disguise has been removed");
 				p.closeInventory();
 			}
+			if(e.getCurrentItem().getType().equals(Material.REDSTONE_BLOCK)){
+				plugin.tokenAPI.showMenu(p);
+			}
 			
 			for (int i = 0; i < plugin.disguisesArray.size(); i++) {
 				Disguises pre = plugin.disguisesArray.get(i);
@@ -129,6 +132,14 @@ public class DisguisesMenu implements Listener{
 		loreArray.add("being displayed. ");
 		loreArray.add("");
 		inv.setItem(4, createItem(Material.GLASS_BOTTLE, "Clear all disguises", loreArray));
+		loreArray.clear();
+		
+		loreArray.clear();
+		loreArray.add("Return to Main Menu");
+		loreArray.add("");
+		loreArray.add("");
+		inv.setItem(45, createItem(Material.REDSTONE_BLOCK, "Back to Main Menu", loreArray));
+		inv.setItem(53, createItem(Material.REDSTONE_BLOCK, "Back to Main Menu", loreArray));
 		loreArray.clear();
 		
 		return inv;

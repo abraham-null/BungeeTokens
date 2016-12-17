@@ -45,6 +45,9 @@ public class ParticlesMenu implements Listener{
 				p.sendMessage(ChatColor.GREEN.toString()+"Your particles has been removed");
 				p.closeInventory();
 			}
+			if(e.getCurrentItem().getType().equals(Material.REDSTONE_BLOCK)){
+				plugin.tokenAPI.showMenu(p);
+			}
 			
 			for (int i = 0; i < plugin.particlesArray.size(); i++) {
 				Particles pre = plugin.particlesArray.get(i);
@@ -125,6 +128,14 @@ public class ParticlesMenu implements Listener{
 		loreArray.add("being displayed. ");
 		loreArray.add("");
 		inv.setItem(4, createItem(Material.GLASS_BOTTLE, "Clear all particles", loreArray));
+		loreArray.clear();
+		
+		loreArray.clear();
+		loreArray.add("Return to Main Menu");
+		loreArray.add("");
+		loreArray.add("");
+		inv.setItem(45, createItem(Material.REDSTONE_BLOCK, "Back to Main Menu", loreArray));
+		inv.setItem(53, createItem(Material.REDSTONE_BLOCK, "Back to Main Menu", loreArray));
 		loreArray.clear();
 		
 		return inv;
